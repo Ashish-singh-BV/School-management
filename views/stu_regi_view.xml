@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="student_registration_tree_filter" model="ir.ui.view">
+            <field name="name">student.registration.tree.filter</field>
+            <field name="model">student.registration</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="10th" name="10th_filter" domain="[('student_class', '=', 10)]" />
+                    <!-- <filter string="Science" name="science_fillter"
+                        domain="[('stream', '=', 'Science')]" />
+                    <filter string="Commerce" name="commerce_fillter"
+                        domain="[('stream', '=', 'Commerce')]" />
+                    <filter string="Art" name="art_fillter" domain="[('stream', '=', 'Art')]" /> -->
+                    <filter name="group_dob_month" string="Month" context="{'group_by':'dob_month'}" />
+
+                </search>
+            </field>
+        </record>
+
+        <record id="stu_registration_tree_view" model="ir.ui.view">
+            <field name="name">registration.tree</field>
+            <field name="model">student.registration</field>
+            <field name="arch" type="xml">
+                <tree string="Registration">
+                    <field name="enr_no" />
+                    <field name="roll_no" />
+                    <field name="student_name" />
+                    <!-- <field name="student_dob" group_by="dob_month"/> -->
+                    <field name="student_class" />
+                    <field name="stream" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="student_registration_view_form" model="ir.ui.view">
+            <field name="name">student.registration.view.form</field>
+            <field name="model">student.registration</field>
+            <field name="arch" type="xml">
+
+                <form>
+                    <sheet>
+                    <h2>
+                                <field name="enr_no" />
+                                </h2>
+                        <group>
+                            <group>
+                                <field name="student_name" />
+                                <field name="student_class" />
+                                <field name="student_div" />
+                                
+
+
+                                <span class="o_form_label o_td_label" name="address_name">
+
+                                    <b>Address</b>
+                                </span>
+                                <div class="o_address_format">
+                                    <field name="adr_street" placeholder="Street..."
+                                        class="o_address_street" />
+                                    <field name="adr_street2" placeholder="Street 2..."
+                                        class="o_address_street" />
+                                    <field name="adr_city" placeholder="City"
+                                        class="o_address_city" />
+                                    <field name="adr_state" class="o_address_state"
+                                        placeholder="State" />
+                                    <field name="adr_pincode" placeholder="ZIP"
+                                        class="o_address_zip" />
+                                    <div name="partner_address_country"
+                                        class="d-flex justify-content-between">
+                                        <field name="adr_contry" placeholder="Country"
+                                            class="o_address_country" />
+                                    </div>
+                                </div>
+
+
+                            </group>
+
+                            <group>
+                                <field name="roll_no" />
+                                <field name="student_dob" />
+                                <field name="student_age" />
+                                <field name="stream"
+                                    attrs="{
+                                            'invisible': [('student_class', 'not in', [12, 11])]
+                                        }" />
+                                <field name="class_teacher" />
+                                <field name="student_phone" />
+
+
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page name="parent_data" string="Parents details">
+                                <group>
+                                    <group>
+                                        <field name="parent_name" />
+                                        <field name="parent_ph_no" />
+                                    </group>
+                                    <group>
+
+                                        <field name="parent_relation" />
+                                        <field name="parent_email" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="previous_school_page" string="Previous Schools">
+                                <group>
+                                    <group>
+                                        <field name="pre_school_name" />
+                                        <field name="pre_school_enr_no" />
+                                    </group>
+                                    <group>
+                                        <field name="pre_school_addmisstion_date" />
+                                        <field name="pre_school_leave_date" />
+                                    </group>
+
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" />
+                        <field name="message_ids" options="{'post refresh': 'recipients'}" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <!-- Action here -->
+        <record id="student_registration_action" model="ir.actions.act_window">
+            <field name="name">Registration</field>
+            <field name="res_model">student.registration</field>
+            <field name="context">{'search_default_10th_filter': 1}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- science studentd action -->
+        <record id="fillter_science_student" model="ir.actions.act_window">
+            <field name="name">Science</field>
+            <field name="res_model">student.registration</field>
+            <field name="domain">[('stream', '=', 'Science')]</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <!-- Commerce studentd action -->
+        <record id="fillter_commerce_student" model="ir.actions.act_window">
+            <field name="name">Commerce</field>
+            <field name="res_model">student.registration</field>
+            <field name="domain">[('stream', '=', 'Commerce')]</field>
+            <field name="view_mode">tree</field>
+        </record>
+        <!-- Art studentd action -->
+        <record id="fillter_art_student" model="ir.actions.act_window">
+            <field name="name">Art</field>
+            <field name="res_model">student.registration</field>
+            <field name="domain">[('stream', '=', 'Art')]</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+    </data>
+</odoo>

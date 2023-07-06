@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate = '1'>
+        <record id="demo_student_1" model="student.registration">
+            <field name="enr_no">ENR-0001</field>
+            <field name="student_name">John Doe</field>
+            <field name="student_phone">1234567890</field>
+            <field name="parent_ph_no">1234567890</field>
+            <field name="student_dob">2000-03-05</field>
+            <field name="student_age">23</field>
+
+        </record>
+        <record id="demo_student_2" model="student.registration">
+            <field name="enr_no">ENR-0002</field>
+            <field name="student_name">Jane Smith</field>
+            <field name="student_phone">9876543210</field>
+            <field name="parent_ph_no">1234567890</field>
+            <field name="student_dob">2000-03-04</field>
+            <field name="student_age">23</field>
+
+        </record>
+        <record id="demo_student_3" model="student.registration">
+            <field name="enr_no">ENR-0003</field>
+            <field name="student_name">Alice Johnson</field>
+            <field name="student_phone">5678901234</field>
+            <field name="parent_ph_no">1234567890</field>
+            <field name="student_dob">2000-03-05</field>
+            <field name="student_age">23</field>
+
+        </record>
+    </data>
+</odoo>

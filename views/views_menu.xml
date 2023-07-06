@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem 
+        id="root_menu" 
+        name="School" />
+
+    <menuitem 
+        id="registration_main_menu" 
+        name="School Registration"
+        parent="root_menu"
+        action="student_registration_action" />
+        
+    <menuitem
+        id="school_teachers_menu"
+        name="Teacher Details"
+        action="teacher_action"
+        parent="root_menu" />
+
+    <menuitem
+        id="stream_menu"
+        name="Stream"
+        parent="root_menu" />
+
+    <menuitem
+        id="science_student_menu"
+        name="Science Students"
+        action="fillter_science_student"
+        parent="stream_menu" />
+    <menuitem
+        id="commerce_student_menu"
+        name="Commerce Students"
+        action="fillter_commerce_student"
+        parent="stream_menu" />
+    <menuitem
+        id="art_student_menu"
+        name="Art Students"
+        action="fillter_art_student"
+        parent="stream_menu" />
+</odoo>

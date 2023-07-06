@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="school_teachers_view_tree" model="ir.ui.view">
+        <field name="name">school.teachers.view.tree</field>
+        <field name="model">school.teachers</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="teacher_name" />
+                <field name="asign_class" />
+                <field name="respect_div" />
+                <field name="assign_stream" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_teachers_view_form" model="ir.ui.view">
+        <field name="name">school.teachers.view.form</field>
+        <field name="model">school.teachers</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="teacher_name" />
+                        <field name="asign_class" />
+                        <field name="respect_div" />
+                        <field name="assign_stream"
+                        attrs="{'invisible': [('asign_class','!=', 12), ('asign_class','!=', 11)],
+                        'required': [('asign_class','=', 12), ('asign_class','=', 11)]}" />
+
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="teacher_action" model="ir.actions.act_window">
+        <field name="name">Teacher Details</field>
+        <field name="res_model">school.teachers</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>
