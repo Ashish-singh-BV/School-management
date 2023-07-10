@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem 
-        id="root_menu" 
+    <menuitem
+        id="root_menu"
         name="School" />
 
-    <menuitem 
-        id="registration_main_menu" 
+    <menuitem
+        id="registration_main_menu"
         name="School Registration"
         parent="root_menu"
         action="student_registration_action" />
-        
+
     <menuitem
         id="school_teachers_menu"
         name="Teacher Details"

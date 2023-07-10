@@ -42,15 +42,14 @@
 
                 <form>
                     <sheet>
-                    <h2>
-                                <field name="enr_no" />
-                                </h2>
+                        <h2>
+                            <field name="enr_no" />
+                        </h2>
                         <group>
                             <group>
                                 <field name="student_name" />
                                 <field name="student_class" />
                                 <field name="student_div" />
-                                
 
 
                                 <span class="o_form_label o_td_label" name="address_name">
@@ -88,10 +87,7 @@
                                         }" />
                                 <field name="class_teacher" />
                                 <field name="student_phone" />
-
-
                             </group>
-
                         </group>
                         <notebook>
                             <page name="parent_data" string="Parents details">
@@ -101,7 +97,6 @@
                                         <field name="parent_ph_no" />
                                     </group>
                                     <group>
-
                                         <field name="parent_relation" />
                                         <field name="parent_email" />
                                     </group>

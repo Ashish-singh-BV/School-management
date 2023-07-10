@@ -48,11 +48,12 @@ class StuRegistation(models.Model):
 
     # school details
     pre_school_name = fields.Char(string="School Name")
+    
     pre_school_enr_no = fields.Char(string="Your Enrollment Number")
     pre_school_addmisstion_date = fields.Date(string="Admission date")
     pre_school_leave_date = fields.Date(string="Leaving Date")
 
-# constrans for phone no
+# constrains for phone no
     @api.constrains('student_phone', 'parent_ph_no')
     def valid_phone_no(self):
         for record in self:
