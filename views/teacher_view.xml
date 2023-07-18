@@ -1,33 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <!-- actions=========================================== -->
+    <!-- server action with "               " func========== -->
+    <record model="ir.actions.server" id="server_acton_fill_python_details">
+        <field name="name">teacher1 Action</field>
+        <field name="model_id" ref="model_school_teachers" />
+        <field name="binding_model_id" ref="model_school_teachers" />
+
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+            record.chek_func()
+
+        </field>
+    </record>
+
+
+    <!-- server action with "xml" func========== -->
+
+    <record model="ir.actions.server" id="server_acton_fill_details">
+        <field name="name">teacher2 Action</field>
+        <field name="model_id" ref="model_school_teachers" />
+        <field name="binding_model_id" ref="model_school_teachers" />
+
+        <field name="state">code</field>
+        <field name="code">
+            for record in records:
+            record.write({'chek_action':'from xml'})
+
+        </field>
+    </record>
+
+
+    <!-- <record model="ir.actions.server" id="print_instance">
+    <field name="name">Res Partner Server Action</field>
+    <field name="model_id" ref="model_school_teachers"/>
+    <field name="binding_model_id" ref="model_school_teachers"/>
+
+    <field name="state">code</field>
+    <field name="code">
+        if record.teacher_name:
+            action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "form",
+                "res_model": record._name,
+                "res_id": record.id,
+            }
+    </field>
+</record> -->
+
+    <!-- main tree view======================================== -->
+
     <record id="school_teachers_view_tree" model="ir.ui.view">
         <field name="name">school.teachers.view.tree</field>
         <field name="model">school.teachers</field>
         <field name="arch" type="xml">
             <tree>
+
                 <field name="teacher_name" />
                 <field name="asign_class" />
                 <field name="respect_div" />
                 <field name="assign_stream" />
+                <field name="chek_action" />
             </tree>
         </field>
     </record>
+
+
+    <!-- main form view======================================== -->
 
     <record id="school_teachers_view_form" model="ir.ui.view">
         <field name="name">school.teachers.view.form</field>
         <field name="model">school.teachers</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="url_redirect" type="object" string='button'>
+                    </button>
+                    <button name="genrate_sequence" type="object" string='for seqence'>
+                    </button>
+                </header>
                 <sheet>
                     <group>
                         <field name="teacher_name" />
                         <field name="asign_class" />
                         <field name="respect_div" />
                         <field name="assign_stream"
-                        attrs="{'invisible': [('asign_class','!=', 12), ('asign_class','!=', 11)],
+                            attrs="{'invisible': [('asign_class','!=', 12), ('asign_class','!=', 11)],
                         'required': [('asign_class','=', 12), ('asign_class','=', 11)]}" />
 
+                        <field name="chek_action" />
+                        <field name="gen_seq" />
 
                     </group>
                 </sheet>
@@ -38,6 +102,8 @@
     <record id="teacher_action" model="ir.actions.act_window">
         <field name="name">Teacher Details</field>
         <field name="res_model">school.teachers</field>
+        <field name="context">{'default_teacher_name': 'demon'}</field>
+
         <field name="view_mode">tree,form</field>
     </record>
 

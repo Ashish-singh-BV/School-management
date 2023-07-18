@@ -146,3 +146,20 @@ class StuRegistation(models.Model):
             if leave_date < add_date or leave_date > date.today():
                 raise ValidationError("Invaild addmission and leave date")
        
+    # def name_get(self):
+    #     result = []
+            
+            
+    #     for rec in self:
+            
+    #         result.append((rec.id, f'{rec.phone_code}-{rec.name}'))
+            
+            
+    #     return result
+    
+    # @api.model
+    # def name_search(self, name='', args=None, operator='ilike', limit=100, name_get_uid=None):
+    #     args = list(args or [])
+    #     if name :
+    #         args += ['|', ('name', operator, name), ('phone_code', operator, name)]
+    #     return self._search(args, limit=limit, access_rights_uid=name_get_uid)
