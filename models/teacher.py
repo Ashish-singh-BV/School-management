@@ -45,8 +45,6 @@ class SchoolTeacher(models.Model):
     def default_get(self, fields):
       
         res = super(SchoolTeacher, self).default_get(fields)
-        print("fields3-------",fields)
-        print("res-------",res)
         
         
         # if not res['teacher_name']:

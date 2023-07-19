@@ -57,7 +57,6 @@
         <field name="model">school.teachers</field>
         <field name="arch" type="xml">
             <tree>
-
                 <field name="teacher_name" />
                 <field name="asign_class" />
                 <field name="respect_div" />
@@ -66,7 +65,6 @@
             </tree>
         </field>
     </record>
-
 
     <!-- main form view======================================== -->
 
@@ -89,10 +87,8 @@
                         <field name="assign_stream"
                             attrs="{'invisible': [('asign_class','!=', 12), ('asign_class','!=', 11)],
                         'required': [('asign_class','=', 12), ('asign_class','=', 11)]}" />
-
                         <field name="chek_action" />
                         <field name="gen_seq" />
-
                     </group>
                 </sheet>
             </form>
@@ -102,9 +98,7 @@
     <record id="teacher_action" model="ir.actions.act_window">
         <field name="name">Teacher Details</field>
         <field name="res_model">school.teachers</field>
-        <field name="context">{'default_teacher_name': 'demon'}</field>
-
+        <field name="context">{'search_default_verified_teacher': 1}</field>
         <field name="view_mode">tree,form</field>
     </record>
-
 </odoo>
