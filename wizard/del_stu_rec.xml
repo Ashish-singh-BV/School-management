@@ -6,12 +6,17 @@
         <field name="model">delete.student</field>
         <field name="arch" type="xml">
             <form>
-                <!-- <sheet> -->
                     <group>
                         <field name="deleted_student_record" />
                     </group>
-                <!-- </sheet> -->
-            </form>
+                    <footer>
+                        <!-- <div class="oe_button_box" name="button_box"> -->
+                            <button name="cancel" type="object" string='button'>
+                                <!-- <field name="field_name" string="" widget="statinfo"/> -->
+                            </button>
+                        <!-- </div> -->
+                    </footer>
+                </form>
         </field>
     </record>
 

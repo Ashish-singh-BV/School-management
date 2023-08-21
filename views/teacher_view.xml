@@ -78,6 +78,7 @@
                     </button>
                     <button name="genrate_sequence" type="object" string='for seqence'>
                     </button>
+                    <button name="exc_query" type="object" string='Query'/>
                 </header>
                 <sheet>
                     <group>
@@ -89,6 +90,9 @@
                         'required': [('asign_class','=', 12), ('asign_class','=', 11)]}" />
                         <field name="chek_action" />
                         <field name="gen_seq" />
+                        <field name="o2m_field">
+                        </field>
+                        <field name="m2m_field" />
                     </group>
                 </sheet>
             </form>

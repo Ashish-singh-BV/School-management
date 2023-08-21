@@ -12,13 +12,24 @@
     'depends': ['base','mail'],
     'data': [
         'security/ir.model.access.csv',
-        'data/demo_data.xml',
         'data/sequence.xml',
+        'data/email_temp.xml',
         'wizard/del_stu_rec.xml',
         'views/stu_regi_view.xml',
+        'views/cron_stu_regi.xml',
         'views/teacher_view.xml',
+        'views/res_config_settings_views.xml',
+        'reports/student_report.xml',
+        'reports/report.xml',
         'views/views_menu.xml',
     ],
+    'demo': [
+        'data/demo_data.xml',
+    ],
+    'images': [
+        'static/description/icon.png',
+        # 'static/description/potrait.png'
+        ],
     'application': True,
     'demo': True,
 }

@@ -10,3 +10,13 @@ class DeleteStudent(models.Model):
     deleted_student_record = fields.Many2one('student.registration',string="Student Name")
     
     
+    
+    def cancel(self):
+        student_id = self.deleted_student_record.id
+        # print(student_id,"gdfshahfhsjfgl")
+        student_record = self.env['student.registration'].browse(student_id)
+        return { 
+            'type' : 'ir.actions.act_window',
+            
+        }
+        # student_record.unlink()

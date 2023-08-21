@@ -51,4 +51,11 @@
         name="Art Students"
         action="fillter_art_student"
         parent="stream_menu" />
+    
+    <menuitem
+        id="school_management_config_settings_menu" 
+        name="Settings"
+        parent="school_managment.others_menu" 
+        sequence="0" 
+        action="school_management_config_settings_action"/>
 </odoo>
