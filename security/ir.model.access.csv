@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_to_registation,Free user,model_student_registration,,1,1,1,1
 access_to_teacher_model,admin user,model_school_teachers,,1,1,1,1
+access_delete_student,delete student,model_delete_student,,1,1,1,1

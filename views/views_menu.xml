@@ -8,18 +8,33 @@
         id="registration_main_menu"
         name="School Registration"
         parent="root_menu"
-        action="student_registration_action" />
+        action="student_registration_action" 
+        sequence="0"/>
 
     <menuitem
         id="school_teachers_menu"
         name="Teacher Details"
         action="teacher_action"
-        parent="root_menu" />
+        parent="root_menu"
+        sequence="1" />
 
     <menuitem
         id="stream_menu"
         name="Stream"
-        parent="root_menu" />
+        parent="root_menu"
+        sequence="2" />
+    
+    <menuitem
+        id="others_menu"
+        name="Others"
+        parent="root_menu"
+        sequence="3" />
+    
+    <menuitem
+        id="delete_student_menu"
+        name="Cancel Admission"
+        action="delete_student_action"
+        parent="others_menu"/>
 
     <menuitem
         id="science_student_menu"
@@ -36,4 +51,11 @@
         name="Art Students"
         action="fillter_art_student"
         parent="stream_menu" />
+    
+    <menuitem
+        id="school_management_config_settings_menu" 
+        name="Settings"
+        parent="school_managment.others_menu" 
+        sequence="0" 
+        action="school_management_config_settings_action"/>
 </odoo>

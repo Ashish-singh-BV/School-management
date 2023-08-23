@@ -41,7 +41,16 @@
             <field name="arch" type="xml">
 
                 <form>
+                    <header>
+                        <button string="Cancel Admission" name="%(delete_student_action)d"
+                            type="action" class="oe_highlight" />
+                            <button string="Send Mail" name="action_send_email"
+                            type="object" class="oe_highlight" />
+                            <button string="Send fake Mail" name="action_send_email_copy"
+                            type="object" class="oe_highlight" />
+                    </header>
                     <sheet>
+                        <field name="student_image" widget="image" class="img img-responsive oe_avatar" />
                         <h2>
                             <field name="enr_no" />
                         </h2>
@@ -50,6 +59,8 @@
                                 <field name="student_name" />
                                 <field name="student_class" />
                                 <field name="student_div" />
+                                <!-- <field name="student_email" /> -->
+
 
 
                                 <span class="o_form_label o_td_label" name="address_name">
@@ -140,6 +151,7 @@
             <field name="name">Science</field>
             <field name="res_model">student.registration</field>
             <field name="domain">[('stream', '=', 'Science')]</field>
+            <field name="target">new</field>
             <field name="view_mode">tree</field>
         </record>
 
@@ -148,6 +160,7 @@
             <field name="name">Commerce</field>
             <field name="res_model">student.registration</field>
             <field name="domain">[('stream', '=', 'Commerce')]</field>
+            <field name="target">new</field>
             <field name="view_mode">tree</field>
         </record>
         <!-- Art studentd action -->
@@ -155,6 +168,7 @@
             <field name="name">Art</field>
             <field name="res_model">student.registration</field>
             <field name="domain">[('stream', '=', 'Art')]</field>
+            <field name="target">new</field>
             <field name="view_mode">tree</field>
         </record>
 

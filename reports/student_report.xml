@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <template id="student_report_inherit" name="template_name">
+        <div style="display:flex;justify-content:space-between;">
+            <strong>DOB.-&gt; <span t-field="doc.student_dob" /></strong>
+            <strong>Age-&gt; <span t-field="doc.student_age" /></strong>
+        </div>
+    </template> -->
+
+
+    <template id="student_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" style="margin:0% 25%;border: 1px solid;padding: 32px">
+
+                        <div style="display:flex;justify-content:space-between;margin:10px 0px;">
+                            <h2 t-field="doc.enr_no"></h2>
+                            
+                            <img
+                                t-att-src="'data:image/png;base64,' + doc.student_image.decode('utf-8')"
+                                height="80" t-att-alt="student_image"/>
+                        </div>
+                        <div >
+                            <div style="display:flex;justify-content:space-between;">
+
+                                <strong>Name-&gt; <span t-field="doc.student_name" /></strong>
+                                <strong>Phone-&gt; <span t-field="doc.student_phone" /></strong>
+                            </div>
+                            <div id="dob_age" style="display:flex;justify-content:space-between;">
+                                <strong>DOB.-&gt; <span t-field="doc.student_dob" /></strong>
+                                <strong>Age-&gt; <span t-field="doc.student_age" /></strong>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <template id="student_report_inherit" inherit_id="school_managment.student_report">
+        <xpath expr="//div[@id='dob_age']" position="after">
+            <div style="display:flex;justify-content:space-between;">
+                <strong>Parent Name-&gt; <span t-field="doc.parent_name" /></strong>
+                <strong>Parent Phone-&gt; <span t-field="doc.parent_ph_no" /></strong>
+            </div>
+        </xpath>
+    </template>
+   
+
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="email_template" model="mail.template">
+        <field name="name">Test Email Template</field>
+        <field name="model_id" ref="school_managment.model_student_registration" />
+        <field name="subject">demon Email</field>
+        <field name="email_from">{{ user.email }}</field>
+        <field name="email_to">{{ object.parent_email }}</field>
+        <field name="report_template" ref ="action_student_report" />
+        <field name="report_name">{{ object.student_name }}</field>
+        <field name="body_html" type="html">
+            <div>
+                <p> Dear<t t-out="object.enr_no" />, <br />
+                        <br /> Good job, this is our first
+                email template! <br />
+                </p> Regards, <br />
+                    <t t-out="object.student_name" />
+                    
+            </div>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="delete_student_view_form" model="ir.ui.view">
+        <field name="name">delete.student.view.form</field>
+        <field name="model">delete.student</field>
+        <field name="arch" type="xml">
+            <form>
+                    <group>
+                        <field name="deleted_student_record" />
+                    </group>
+                    <footer>
+                        <!-- <div class="oe_button_box" name="button_box"> -->
+                            <button name="cancel" type="object" string='button'>
+                                <!-- <field name="field_name" string="" widget="statinfo"/> -->
+                            </button>
+                        <!-- </div> -->
+                    </footer>
+                </form>
+        </field>
+    </record>
+
+    <record id="delete_student_action" model="ir.actions.act_window">
+        <field name="name">Cancel Student</field>
+        <field name="res_model">delete.student</field>
+        <field name="target">new</field>
+        <field name="view_mode">form</field>
+        
+    </record>
+
+</odoo>

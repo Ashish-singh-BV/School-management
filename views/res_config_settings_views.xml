@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.school.management</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+
+                    <div class="app_settings_block" data-string="School Management"
+                        id="school_management" string="School Management"
+                        data-key="school_managment">
+                        <h2>School Management</h2>
+
+
+                        <div class="row mt16 o_settings_container" id="main_setting">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane" />
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Cancel Admission</span>
+                                    <a
+                                        href="https://www.odoo.com/documentation/16.0/applications/sales/sales/invoicing/down_payment.html"
+                                        class="o_doc_link" target="_blank"></a>
+                                    <div class="text-muted">
+                                        it will set this value for age checking
+                                    </div>
+                                    <div class="text-muted content-group mt16">
+
+                                        <field name="cancel_admission" class="text-center" />
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="setting_bool">
+                                <div class="o_setting_left_pane">
+                                    <field name="setting_bool" />
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="setting_bool" string="Just a bool" />
+                                    <div class="text-muted">
+                                        Chek to enable path to madel
+                                    </div>
+                                    <div class="mt8"
+                                        attrs="{'invisible': [('setting_bool','=',False)]}">
+                                        <button
+                                            name="%(school_managment.student_registration_action)d"
+                                            icon="fa-arrow-right" type="action"
+                                            string="main model" class="btn-link" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <h2>demon</h2> -->
+                            <div class="col-12 col-lg-6 o_setting_box" id="stu_rec">
+                                <div class="o_setting_left_pane" />
+
+                                <div class="o_setting_right_pane">
+                                    <label for="stu_rec" string="search student" />
+                                    <div class="text-muted">
+                                        select record for open his form
+                                    </div>
+                                    <div class="content-group mt16">
+                                        <field name="stu_rec" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6 o_setting_box" id="setting_div">
+                                <div class="o_setting_left_pane" />
+
+                                <div class="o_setting_right_pane">
+                                    <label for="setting_div" string="Radio" />
+                                    <div class="text-muted">
+                                        select radioooo
+                                    </div>
+                                    <div class="mt16">
+                                        <field name="setting_div" class="o_light_label"
+                                            widget="radio" options="{'horizontal': true}"
+                                            required="True" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <h2>Demon</h2>
+                        <div class="row mt16 o_settings_container" id="main_setting">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="col-12 col-lg-6 o_setting_box" id="setting_bool">
+                                    <div class="o_setting_left_pane">
+                                        <field name="setting_bool" />
+                                    </div>
+                                    <div class="o_setting_right_pane">
+                                        <label for="setting_bool" string="Just a bool" />
+                                        <div class="text-muted">
+                                            Chek to enable path to madel
+                                        </div>
+                                        <div class="mt8"
+                                            attrs="{'invisible': [('setting_bool','=',False)]}">
+                                            <button
+                                                name="%(school_managment.student_registration_action)d"
+                                                icon="fa-arrow-right" type="action"
+                                                string="main model" class="btn-link" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record id="school_management_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'school_managment', 'bin_size': False}</field>
+        </record>
+
+
+    </data>
+</odoo>
