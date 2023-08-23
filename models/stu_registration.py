@@ -53,7 +53,7 @@ class StuRegistation(models.Model):
     pre_school_addmisstion_date = fields.Date(string="Admission date")
     pre_school_leave_date = fields.Date(string="Leaving Date")
 
-# constrains for phone no
+# constrains for phone
     @api.constrains('student_phone', 'parent_ph_no')
     def valid_phone_no(self):
         for record in self:
